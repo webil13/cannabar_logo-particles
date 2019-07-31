@@ -1,0 +1,252 @@
+@font-face {
+  font-family: 'PrimaSerifBT-Roman';
+  src: url('/fonts/PrimaSerifBT-Roman.otf') format('otf'), url('/fonts/PrimaSerifBT-Roman.woff') format('woff');
+}
+
+:root {
+  --time: 500ms;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  min-height: 100vh;
+  box-sizing: border-box;
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  background: transparent;
+  color: #fff;
+  font-family: 'PrimaSerifBT-Roman', serif;
+}
+
+/* Particles Background */
+
+#particles-js {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+  background: rgba(0, 0, 0, 1);
+}
+
+/* Whole Logo Element */
+
+.logo__wrapper {
+  display: grid;
+  font-size: 5rem;
+  line-height: 1;
+  background: rgba(0, 0, 0, .8);
+  z-index: 2;
+  position: relative;
+}
+
+/* Top Portion of Logo with Border */
+
+.logo__wrapper-top {
+  padding: 10px 8px 10px 10px;
+  display: grid;
+  grid-column-gap: -5px;
+  text-align: center;
+  align-content: stretch;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  position: relative;
+}
+
+.logo__wrapper_item {
+  width: 100%;
+  height: 4.3rem;
+  margin: -2px;
+  padding: 0;
+  line-height: .8;
+  overflow: hidden;
+  position: relative;
+}
+
+.logo__wrapper_item-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  max-width: 3rem;
+  min-height: 3rem;
+  transform: translateY(0);
+  animation-name: letterSlide;
+  animation-iteration-count: 3;
+  animation-duration: 15000ms;
+  animation-timing-function: ease-in;
+}
+
+#a1 {
+  animation-delay: 500ms;
+}
+
+#n1 {
+  animation-delay: 1000ms;
+}
+
+#n2 {
+  animation-delay: 1500ms;
+}
+
+#a2 {
+  animation-delay: 2000ms;
+}
+
+#img {
+  animation-delay: 2500ms;
+}
+
+#b {
+  animation-delay: 3000ms;
+}
+
+#a3 {
+  animation-delay: 3500ms;
+}
+
+#r {
+  animation-delay: 4000ms;
+}
+
+.logo__wrapper-img {
+  width: 4rem;
+  height: 4rem;
+}
+
+/* Border & Animations */
+
+.logo__wrapper-border {
+  width: 100%;
+  height: 6px;
+  background-color: #fff;
+  transition: transform 400ms ease-in-out;
+}
+
+.top-border {
+  animation: snakyTopBorder 7500ms 1 ease-in-out;
+  animation-delay: 2000ms;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  transform-origin: left;
+  transform: translateX(-2px);
+  width: calc(100% + 5px);
+}
+
+.bottom-border {
+  animation: snakyBottomBorder 7500ms 1 ease-in-out;
+  animation-delay: 2000ms;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transform-origin: right;
+  transform: translateX(-3px);
+  width: calc(100% + 6px);
+}
+
+.left-border {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  transform-origin: left;
+  transform: translateY(-2px) rotate(-270deg);
+  width: calc(100% - 12px);
+  animation: snakyLeftBorder 7500ms 1 ease-in-out;
+  animation-delay: 2000ms;
+}
+
+.right-border {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  transform-origin: right;
+  transform: rotate(90deg);
+  width: calc(100% - 14px);
+  animation: snakyRightBorder 7500ms 1 ease-in-out;
+  animation-delay: 2000ms;
+}
+
+/* Letters Animations */
+
+@keyframes letterSlide {
+  0% {
+    transform: translateY(150%);
+  }
+  30% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Border Animations */
+
+@keyframes snakyTopBorder {
+  0% {
+    transform: translateX(-2px) scaleX(0);
+  }
+  100% {
+    transform: translateX(-2px) scaleX(1);
+  }
+}
+
+@keyframes snakyBottomBorder {
+  0% {
+    transform: translateX(-3px) scaleX(0);
+  }
+  100% {
+    transform: translateX(-3px) scaleX(1);
+  }
+}
+
+@keyframes snakyRightBorder {
+  0% {
+    transform: rotate(90deg) scaleX(0);
+  }
+  100% {
+    transform: rotate(90deg) scaleX(1);
+  }
+}
+
+@keyframes snakyLeftBorder {
+  0% {
+    transform: translateY(-2px) rotate(-270deg) scaleX(0);
+  }
+  100% {
+    transform: ranslateY(-2px) rotate(-270deg) scaleX(1);
+  }
+}
+
+/* Bottom Part of Logo with Slogan */
+
+.logo__wrapper-bottom {
+  overflow: hidden;
+  z-index: 2;
+}
+
+.logo__wrapper-bottom p {
+  text-transform: uppercase;
+  font-size: 12px;
+  margin: 0;
+  padding: 5px 0 0 0;
+  line-height: 1;
+  transform: translateY(0);
+  animation-name: letterSlide;
+  animation-iteration-count: 3;
+  animation-duration: 15000ms;
+  animation-timing-function: ease-in;
+  animation-delay: 4500ms;
+}
